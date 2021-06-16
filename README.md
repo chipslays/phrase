@@ -11,7 +11,7 @@ Internationalization library for PHP.
 ## Installation
 
 ```bash
-composer require chopslays/phrase
+composer require chipslays/phrase
 ```
 
 ## Setup
