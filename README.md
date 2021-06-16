@@ -98,6 +98,8 @@ Pass named arguments to interpolate your translations.
 $phrase->get('hello', ['{name}' => 'John Doe']);
 Phrase::get('hello', ['{name}' => 'John Doe']);
 __('hello', ['{name}' => 'John Doe']);
+
+// Hello John Doe!
 ```
 
 ### Pluralization
@@ -112,7 +114,6 @@ Russian pluralization phrase:
 {{rus:{count},арбуз,арбуза,арбузов}}
 ```
 
-
 ```yaml
 # english locale file
 # for english plural word have 1 form
@@ -121,17 +122,11 @@ plural: I have {count} {{eng:{count},melon}} and {money} {{eng:{money},dollar}}.
 ....
 ```
 
-```php
-$phrase->get('plural', ['{count}' => 1, '{money}' => 100])
-Phrase::get('plural', ['{count}' => 1, '{money}' => 100])
-__('plural', ['{count}' => 1, '{money}' => 100])
-```
-
 ```yaml
 # russian locale file
 # for russian plural word have 3 forms
 ...
-plural: У меня есть {count} {{rus:{count},арбуз,арбуза,арбузов}} и {money} {{rus:{money},рубль,рубля,рублей}}..
+plural: У меня есть {count} {{rus:{count},арбуз,арбуза,арбузов}} и {money} {{rus:{money},рубль,рубля,рублей}}
 ....
 ```
 
@@ -139,6 +134,8 @@ plural: У меня есть {count} {{rus:{count},арбуз,арбуза,ар�
 $phrase->get('plural', ['{count}' => 1, '{money}' => 100])
 Phrase::get('plural', ['{count}' => 1, '{money}' => 100])
 __('plural', ['{count}' => 1, '{money}' => 100])
+
+// I have 1 melon and 100 dollars.
 ```
 
 ```php
