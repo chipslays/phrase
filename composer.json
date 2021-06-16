@@ -1,0 +1,20 @@
+{
+    "name": "chipslays/phrase",
+    "description": "Internationalization library for PHP.",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Chipslays\\Phrase\\": "src/"
+        },
+        "files": ["helpers.php"]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}

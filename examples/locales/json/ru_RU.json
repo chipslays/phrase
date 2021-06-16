@@ -1,0 +1,8 @@
+{
+    "hello": "Привет {name}!",
+    "plural": "У меня есть {count} {{rus:{count},арбуз,арбуза,арбузов}} и {money} {{rus:{money},рубль,рубля,рублей}}.",
+    "array": {
+        "text": "Это мой флаг.",
+        "image": "images/ru-flag.jpg"
+    }
+}

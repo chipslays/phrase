@@ -1,0 +1,5 @@
+hello: Привет {name}!
+plural: I have {count} {{eng:{count},melon}} and {money} {{eng:{money},dollar}}.
+array:
+  text: Это мой флаг.
+  image: "images/en-flag.jpg"
