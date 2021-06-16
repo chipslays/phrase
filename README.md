@@ -1,5 +1,9 @@
 # 🙊 Phrase
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/chipslays/phrase/tests)
+![Packagist Version](https://img.shields.io/packagist/v/chipslays/phrase)
+![GitHub](https://img.shields.io/github/license/chipslays/phrase?color=%23a6957c)
+
 Internationalization library for PHP.
 
 ## Features
