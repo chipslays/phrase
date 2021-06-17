@@ -51,6 +51,11 @@ Locale file: `locales/json/en_US.json`
 ### Create `Phrase` instance
 
 ```php
+// Engine constructor
+__construct(string $root, string $locale, ?string $fallback);
+```
+
+```php
 use Chipslays\Phrase\Phrase;
 use Chipslays\Phrase\Engine\JsonEngine;
 
