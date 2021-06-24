@@ -146,6 +146,29 @@ __('plural', ['{count}' => 1, '{money}' => 100])
 // I have 1 melon and 100 dollars.
 ```
 
+### Merge locale messages (`load` `patch`)
+
+Use `patch` method if you need to add messages to an already uploaded file.
+
+If this locale was not previously loaded, it will simply be loaded.
+
+Use `load` method for delete and overwrite all previous messages by locale.
+
+```php
+use Chipslays\Phrase\Phrase;
+use Chipslays\Phrase\Engine\YamlEngine;
+
+$engine = new YamlEngine(__DIR__ . '/locales/yaml', 'en_US');
+$phrase = new Phrase($engine);
+
+// this method loaded en_US.yml file from MyPlugin dir and merge with previously loaded locale en_US
+$phrase->patch(__DIR__ . '/locales/plugins/MyPlugin/', 'en_US');
+
+// this method delete and overwrite all previous messages
+$phrase->load(__DIR__ . '/locales/yaml', 'en_US');
+
+```
+
 ```php
 use Chipslays\Phrase\Plural;
 
