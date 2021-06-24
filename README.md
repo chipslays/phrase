@@ -85,6 +85,15 @@ Phrase::get(...);
 ### Get message
 
 ```php
+$phrase->get(string $key, ?array $replace = null, ?string $locale = null);
+
+# key - locale message key
+# replace - array with interpolation
+# locale - force locale (useful when using multiple locales at the same time)
+```
+
+
+```php
 $phrase->get('hello');
 Phrase::get('hello');
 __('hello');
