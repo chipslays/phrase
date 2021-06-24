@@ -6,20 +6,20 @@ use Chipslays\Phrase\Exceptions\PhraseException;
 
 class YamlEngine extends AbstractEngine
 {
+    protected $localeFileExtension = 'yml';
+
     /**
-     * @param string $locale
-     * @return void
+     * @param string $path
+     * @return array
      *
      * @throws PhraseException
      */
-    protected function load(string $locale): void
+    public function parseLocaleFile(string $path): array
     {
-        $path = $this->root . '/' . $locale . '.yml';
-
         if (!file_exists($path)) {
             throw new PhraseException("Locale file not found in path {$path}", 1);
         }
 
-        $this->locales[$locale] = yaml_parse_file($path);
+        return yaml_parse_file($path);
     }
 }

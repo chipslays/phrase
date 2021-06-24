@@ -10,7 +10,6 @@ abstract class AbstractEngine implements EngineInterface
     protected string $root;
     protected string $locale;
     protected ?string $fallback;
-
     protected array $locales = [];
 
     public function __construct(
@@ -23,7 +22,33 @@ abstract class AbstractEngine implements EngineInterface
         $this->fallback = $fallback ?? $locale;
     }
 
-    abstract protected function load(string $locale): void;
+    /**
+     * @param string $path
+     * @return array
+     *
+     * @throws PhraseException
+     */
+    abstract protected function parseLocaleFile(string $path): array;
+
+    /**
+     * @param string $locale
+     * @return void
+     */
+    public function load(string $locale): void
+    {
+        $path = $this->root . '/' . $locale . '.' . $this->localeFileExtension;
+        $this->locales[$locale] = $this->parseLocaleFile($path);
+    }
+
+    /**
+     * @param string $path Path to locale file
+     * @param string $locale Locale code
+     * @return void
+     */
+    public function patch(string $path, string $locale): void
+    {
+        $this->locales[$locale] = isset($this->locales[$locale]) ? array_merge($this->locales[$locale], $this->parseLocaleFile($path)) : $this->parseLocaleFile($path);
+    }
 
     private function loadLocaleIfNotLoaded(string $locale): void
     {

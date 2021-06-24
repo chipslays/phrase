@@ -6,21 +6,20 @@ use Chipslays\Phrase\Exceptions\PhraseException;
 
 class JsonEngine extends AbstractEngine
 {
+    protected $localeFileExtension = 'json';
+
     /**
-     * @param string $locale
-     * @return void
+     * @param string $path
+     * @return array
      *
      * @throws PhraseException
      */
-    protected function load(string $locale): void
+    public function parseLocaleFile(string $path): array
     {
-        $path = $this->root . '/' . $locale . '.json';
-
         if (!file_exists($path)) {
             throw new PhraseException("Locale file not found in path {$path}", 1);
         }
 
-        $raw = file_get_contents($path);
-        $this->locales[$locale] = json_decode($raw, true);
+        return json_decode(file_get_contents($path), true);
     }
 }
