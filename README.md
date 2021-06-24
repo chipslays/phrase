@@ -148,7 +148,7 @@ __('plural', ['{count}' => 1, '{money}' => 100])
 
 ### Merge locale messages (`load`, `patch`)
 
-Use `patch` method if you need to add messages to an already uploaded file.
+Use `patch` method if you need to add messages to an already loaded file.
 
 If this locale was not previously loaded, it will simply be loaded.
 
