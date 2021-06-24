@@ -146,7 +146,7 @@ __('plural', ['{count}' => 1, '{money}' => 100])
 // I have 1 melon and 100 dollars.
 ```
 
-### Merge locale messages (`load` `patch`)
+### Merge locale messages (`load`, `patch`)
 
 Use `patch` method if you need to add messages to an already uploaded file.
 
