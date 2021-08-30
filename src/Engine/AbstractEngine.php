@@ -76,7 +76,9 @@ abstract class AbstractEngine implements EngineInterface
             return $this->locales[$this->fallback][$key];
         }
 
-        throw new PhraseException("Key `{$key}` not exists in `{$locale}` locale and in {$this->fallback} fallback. ", 1);
+        // throw new PhraseException("Key `{$key}` not exists in `{$locale}` locale and in {$this->fallback} fallback. ", 1);
+        
+        return $key;
     }
 
     /**
