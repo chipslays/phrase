@@ -47,7 +47,9 @@ abstract class AbstractEngine implements EngineInterface
      */
     public function patch(string $path, string $locale): void
     {
-        $this->locales[$locale] = isset($this->locales[$locale]) ? array_merge($this->locales[$locale], $this->parseLocaleFile($path)) : $this->parseLocaleFile($path);
+        $this->locales[$locale] = isset($this->locales[$locale]) 
+            ? array_merge($this->locales[$locale], $this->parseLocaleFile($path)) 
+            : $this->parseLocaleFile($path);
     }
 
     private function loadLocaleIfNotLoaded(string $locale): void
